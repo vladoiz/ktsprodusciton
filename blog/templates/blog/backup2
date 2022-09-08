@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+
+    <ol>
+      <li><a href="/">Главная</a></li>
+      <li>Новости</li>
+    </ol>
+  </div>
+  </section>
+<!-- section -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <!-- post -->
+          {% for post in page.get_children %}
+            {% with post=post.specific %}
+          <div class="col-md-12">
+            <div class="post post-row">
+              <a href="blog-post.html"><img alt="">
+                {% with post.main_image as main_image %}
+                {% if main_image %}
+                  {% image main_image max-600x270 class="post-img"%}{% endif %}
+                  {% endwith %}
+              </img>
+              </a>
+              <div class="post-body">
+                <div class="post-meta">
+                  <a class="post-category cat-2" href="category.html">JavaScript</a>
+                  <span class="post-date">{{ post.date }}</span>
+                </div>
+                <h3 class="post-title"><a href="{% pageurl post %}">{{ post.title }}</a></h3>
+                <p>{{ post.specific.intro }}</p>
+              </div>
+            </div>
+          </div>
+                {% endwith %}
+          {% endfor %}
+        </div>
+      </div>
+      <!-- tags -->
+      <div class="aside-widget">
+        <div class="tags-widget">
+          <ul>
+            <li><a href="#">Chrome</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">Tutorial</a></li>
+            <li><a href="#">Backend</a></li>
+            <li><a href="#">JQuery</a></li>
+            <li><a href="#">Design</a></li>
+            <li><a href="#">Development</a></li>
+            <li><a href="#">JavaScript</a></li>
+            <li><a href="#">Website</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /tags -->
+      </div>
+    </div>
+    </div>
+          <!-- /post -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- <section class="inner-page pt-4">
+      <div class="container">
+      <div class="row">
+      {% for post in page.get_children %}
+        {% with post=post.specific %}
+        <div class="col-sm-6">
+          <div class="card" style="width: 18rem;">
+            {% with post.main_image as main_image %}
+              {% if main_image %}
+          <img class="card-img-top">
+            {% image main_image max-350x350 %}{% endif %}
+        </img>
+        {% endwith %}
+          <div class="card-body">        
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.specific.intro }}</p>
+            <a href="{% pageurl post %}">Читать новость</a>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{ post.date }}</small>
+          </div>
+        </div>
+      </div>
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+-->
+{% endblock %}
+
+
+
+
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+
+<main id="main">
+    <section class="inner-page pt-4">
+      <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date }}</p>
+
+    <div class="intro">{{ page.intro }}</div>
+    
+
+    {{ page.body|richtext }}
+    {% for item in page.gallery_images.all %}
+        <div style="float: left; margin: 10px">
+            {% image item.image fill-320x240 %}
+            <p>{{ item.caption }}</p>
+        </div>
+    {% endfor %}
+
+    <p><a href="{{ page.get_parent.url }}">Return to blog</a></p>
+</div>
+</section>
+
+</main>
+{% endblock %}

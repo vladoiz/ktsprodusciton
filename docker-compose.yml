@@ -1,0 +1,7 @@
+version: '3.8'
+services:
+   web:
+       build: .
+       command: python manage.py runserver localhost:80
+       ports:
+           - 80:80

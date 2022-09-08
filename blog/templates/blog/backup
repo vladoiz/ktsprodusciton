@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+
+    <ol>
+      <li><a href="/">Главная</a></li>
+      <li>Новости</li>
+    </ol>
+  </div>
+  </section>
+    <section class="inner-page pt-4">
+      <div class="container">
+      <div class="row">
+      {% for post in page.get_children %}
+        {% with post=post.specific %}
+        <div class="col-sm-6">
+          <div class="card" style="width: 18rem;">
+            {% with post.main_image as main_image %}
+              {% if main_image %}
+          <img class="card-img-top">
+            {% image main_image max-350x350 %}{% endif %}
+        </img>
+        {% endwith %}
+          <div class="card-body">        
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.specific.intro }}</p>
+            <a href="{% pageurl post %}">Читать новость</a>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{ post.date }}</small>
+          </div>
+        </div>
+      </div>
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

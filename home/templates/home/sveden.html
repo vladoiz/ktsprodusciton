@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-sveden{% endblock %}
+
+
+
+{% block content %}
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+
+    <ol>
+      <li><a href="/">Главная</a></li>
+      <li>{{ page.title }}</li>
+    </ol>
+    <h2>{{ page.title }}</h2>
+  </div>
+  </section>
+<main id="main">
+  <section class="inner-page pt-4">
+    <div class="container">
+      {% include_block page.body %}
+      
+    </div>
+  </section>
+
+</main>
+{% endblock content %}

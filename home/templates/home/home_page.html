@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+
+
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center" data-aos="fade-up">
+        <div class="col-lg-6 intro-info order-lg-first order-last" data-aos="zoom-in" data-aos-delay="100">
+          <h2>Курский техникум свяZи<br>единственное учебное <span>заведение</span> в регионе, которое готовит специалистов для отрасли <span>связи</span></h2>
+          <div>
+            <a href="#about" class="btn-get-started scrollto">Начать</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 intro-img order-lg-last order-first" data-aos="zoom-out" data-aos-delay="200">
+          <img src="{% static 'img/logo5.png' %}" alt="" class="img-fluid"></a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+
+          <div class="col-lg-5 col-md-6">
+            <div class="about-img" data-aos="fade-right" data-aos-delay="100">
+              <img src="{% static 'img/about-image2.jpg' %}" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7 col-md-6">
+            <div class="about-content" data-aos="fade-left" data-aos-delay="100">
+              <h2>Добро пожаловать!</h2>
+              <h3>«С нами связь лучше», это не просто фараза, по которой узнают «Курский техникум связи» - это миссия организации.</h3>
+              <p>Наши выпускники работают в отрасли  во всех регионах России: от Мурманска до Владивостока, но где бы они ни работали, они помнят девиз техникума: «С нами связь лучше!» Если Вас интересуют профессии, востребованные на рынке труда, если вы хотите быть людьми, внедряющими современные средства связи, наш техникум на высоком профессиональном уровне подготовит Вас к успешной трудовой деятельности. Обучение осуществляется на русском языке.  Более подробную информацию о нас и наших профессиях Вы найдете на страницах нашего сайта.</p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> Какой-то текст о преимуществах</li>
+                <li><i class="bi bi-check-circle"></i> Какой-то текст о преимуществах</li>
+                <li><i class="bi bi-check-circle"></i> Какой-то текст о преимуществах</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+<!-- ======= Testimonials Section ======= -->
+<section id="testimonials" class="testimonials">
+  <div class="container" data-aos="zoom-in">
+
+    <header class="section-header">
+      <h3>Руководство</h3>
+    </header>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/director.png' %}" class="testimonial-img" alt="">
+                <h3>Ремпель Петр Петрович</h3>
+                <h4>директор ОБПОУ "КТС"</h4>
+                <p>
+                  Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/Gruneva.png' %}" class="testimonial-img" alt="">
+                <h3>Грунева Анна Александровна</h3>
+                <h4>Зам. по учебно-производственной работе</h4>
+                <p>
+                  Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="{% static 'img/hinevich.png' %}" class="testimonial-img" alt="">
+                <h3>Хиневич 
+                  Наталья Алексеевна</h3>
+                <h4>Заместитель 
+                  по учебной 
+                  работе</h4>
+                <p>
+                  Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Testimonials Section -->
+    
+    <section id="why-us" class="why-us">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <header class="section-header">
+          <h3>Почему мы?</h3>
+          <p>Все очень просто, потому что мы лучшие!</p>
+        </header>
+
+        <div class="row">
+
+          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="why-us-img">
+              <video class="img-fluid" controls="controls" poster="{% static 'img/shortcut.png' %}">
+                <source src="{% static 'img/mainvideo.mp4' %}">
+               </video>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="why-us-content">
+              <p>Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.</p>
+              <p>
+                Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+
+                Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+              </p>
+
+              <div class="features clearfix" data-aos="fade-up" data-aos-delay="100">
+                <i class="bi bi-bookmarks" style="color: #f058dc;"></i>
+                <h4>Пункт 1</h4>
+                <p>Съешь ещё этих мягких французских булок, да выпей же чаю.</p>
+              </div>
+
+              <div class="features clearfix" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-box-seam" style="color: #ffb774;"></i>
+                <h4>Пункт 2</h4>
+                <p>Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.</p>
+              </div>
+
+              <div class="features clearfix" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-card-checklist" style="color: #589af1;"></i>
+                <h4>Пункт 3</h4>
+                <p>Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="container">
+        <div class="row counters" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="82" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Года</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="50000" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Выпусников</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Студентов</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-purecounter-start="0" data-purecounter-end="148" data-purecounter-duration="1" class="purecounter"></span>
+            <p>Проектов</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    
+      <!-- ======= Clients Section ======= -->
+      <section id="clients" class="clients">
+        <div class="container" data-aos="zoom-in">
+  
+          <header class="section-header">
+            <h3>Наши партнеры</h3>
+          </header>
+          <div class="clients-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide"><img src="{% static 'img/clients/client-1.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{% static 'img/clients/client-2.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{% static 'img/clients/client-3.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{% static 'img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="{% static 'img/clients/client-5.png' %}" class="img-fluid" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+  
+        </div>
+      </section><!-- End Clients Section -->
+  
+    <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action" class="call-to-action">
+      <div class="container" data-aos="zoom-out">
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3 class="cta-title">Заходите в наш чат бот в Telegram</h3>
+            <p class="cta-text">Устанавливайте себе на телефон мессенджер Telegram и подключайтесь к  Боту Lina</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="https://tglink.ru/WeKTS_bot" target="_blank">Бот в <i class="bi bi-telegram"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </section><!--  End Call To Action Section -->
+<!-- ======= F.A.Q Section ======= -->
+<section id="faq" class="faq">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h3>Ответы на частозадаваемые вопросы</h3>
+    </header>
+
+    <ul class="faq-list" data-aso="fade-up" data-aos-delay="100">
+
+      <li>
+        <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Часто задаваемый вопрос №1?  <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Часто задаваемый вопрос №2?  <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Часто задаваемый вопрос №3?  <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Часто задаваемый вопрос №4?  <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Часто задаваемый вопрос №5?  <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+          </p>
+        </div>
+      </li>
+
+      <li>
+        <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Часто задаваемый вопрос №6?  <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+        <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+          <p>
+            Съешь ещё этих мягких французских булок, да выпей же чаю.Съешь ещё этих мягких французских булок, да выпей же чаю.
+          </p>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</section><!-- End F.A.Q Section -->
+<section id="map">
+<div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/org/kurskiy_tekhnikum_svyazi/1170180562/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Курский техникум связи</a><a href="https://yandex.ru/maps/8/kursk/category/technical_college/184106244/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Техникум в Курске</a><iframe src="https://yandex.ru/map-widget/v1/-/CCUFrPXftC" width="100%" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+</section>
+</main>
+
+{% endblock content %}

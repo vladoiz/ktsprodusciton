@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-sveden{% endblock %}
+
+
+
+{% block content %}
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+
+    <ol>
+      <li><a href="/">Главная</a></li>
+      <li>{{ page.title }}</li>
+    </ol>
+  </div>
+  </section>
+<main id="main">
+      
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+      
+              <header class="section-header">
+                <h3>Абитуриент!</h3>
+                <p>Здесь ты можешь найти информацию о своей будущей специальности/профессии, работе техникума и о всём что интересно</p>
+              </header>
+      
+              <div class="row g-5">
+      
+                <div class="col-md-6 col-lg-4 wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="box">
+                    <div class="icon" style="background: #ecebff;"><i class="bi bi-layers-half" style="color: #8660fe;"></i></div>
+                    <h4 class="title"><a href="">Специальности</a></h4>
+                    <p class="description">Выбрать специальность</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="box">
+                    <div class="icon" style="background: #fff0da;"><i class="bi bi-hammer" style="color: #e98e06;"></i></div>
+                    <h4 class="title"><a href="">Профессии</a></h4>
+                    <p class="description">Выбрать профессию</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="box">
+                    <div class="icon" style="background: #e6fdfc;"><i class="bi bi-door-open-fill" style="color: #3fcdc7;"></i></div>
+                    <h4 class="title"><a href="">Дни открытых дверей</a></h4>
+                    <p class="description"></p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="box">
+                    <div class="icon" style="background: #eafde7;"><i class="bi bi-info-square" style="color:#41cf2e;"></i></div>
+                    <h4 class="title"><a href="">Правила приема</a></h4>
+                    <p class="description">Всё о правилах приема и работе приемной комиссии</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class=" box">
+                  <div class="icon" style="background: #e1eeff;"><i class="bi bi-journal-check" style="color: #2282ff;"></i></div>
+                  <h4 class="title"><a href="">Документы для поступления</a></h4>
+                  <p class="description">Список необходимых документов для поступления</p>
+                </div>
+              </div>
+      
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="box">
+                  <div class="icon" style="background: #fceef3;"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
+                  <h4 class="title"><a href="">Профессиональные пробы</a></h4>
+                  <p class="description">Попробуй себя в роли специалиста</p>
+                </div>
+              </div>
+      
+            </div>
+      
+            </div>
+          </section>
+
+</main>
+{% endblock content %}

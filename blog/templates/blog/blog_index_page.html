@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+    <ol>
+      <li><a href="/">Главная</a></li>
+      <li>Новости</li>
+    </ol>
+  </div>
+  </section>
+<!-- section -->
+<div class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <!-- post-->
+          {% for post in page.get_children%}
+            {% with post=post.specific %}
+          <div class="col-md-12">
+            <div class="post post-row">
+              <a href="{% pageurl post %}"><img alt="">
+                {% with post.main_image as main_image %}
+                {% if main_image %}
+                  {% image main_image max-600x270 class="post-img"%}{% endif %}
+                  {% endwith %}
+                  
+              </img>
+              </a>
+              <div class="post-body">
+                <div class="post-meta">
+                  <a class="post-category cat-3" href="category.html">Категория</a>
+                  <span class="post-date">{{ post.date }}</span>
+                </div>
+                <h3 class="post-title"><a href="{% pageurl post %}">{{ post.title }}</a></h3>
+                <p>{{ post.specific.intro }}</p>
+              </div>
+            </div>
+          </div>
+                {% endwith %}
+          {% endfor %}
+        </div>
+      </div> 
+      <!-- tags -->
+      <div class="col-md-4">
+      <div class="aside-widget">
+        <div class="tags-widget">
+        <h1>Tеги:</h1>
+          <ul>
+            <li><a href="#">Наша гордость</a></li>
+            <li><a href="#">Учеба</a></li>
+            <li><a href="#">Мероприятия</a></li>
+            <li><a href="#">Теги</a></li>
+            <li><a href="#">Теги</a></li>
+            <li><a href="#">Теги</a></li>
+            <li><a href="#">Теги</a></li>
+            <li><a href="#">Теги</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- /tags -->
+    </div>
+      </div>
+    </div>
+    </div>
+          <!-- /post -->
+{% endblock %}

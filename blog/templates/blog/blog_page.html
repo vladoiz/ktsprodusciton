@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+{% block content %}
+
+      
+
+
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+  
+      <ol>
+        <li><a href="/">Главная</a></li>
+        <li><a href="{{ page.get_parent.url }}">Новости</a></li>
+        <li>{{ page.title }}</li>
+      </ol>
+    </div>
+    </section>
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- Post content -->
+            <div class="col-md-8">
+                <div class="section-row sticky-container">
+                    <div class="main-post">
+                        <h1>{{ page.title }}</h1>
+                        
+                        <div class="post-meta">
+                            <span class="post-date">{{ page.date }}</span>
+                            <p>
+                                <a href="#">{{ tag }}</a>
+                            </p>
+                        </div>
+                        {% if page.bg_image %}
+                         {% image page.bg_image width-500 %}
+                        {% endif %}
+                        <p>{{ page.body|richtext }}
+                            
+                        </p>
+                            {% for item in page.gallery_images.all %}
+                            
+                            <figure class="figure-img">
+                                    {% image item.image fill-320x240 class="img-responsive"%}
+                                    <figcaption>{{ item.caption }}</figcaption>
+                                </figure>
+                                <div class="post-shares sticky-shares">
+                                    <!-- uSocial -->
+<script async src="https://usocial.pro/usocial/usocial.js?uid=3b82704d5cf34196&v=6.1.5" data-script="usocial" charset="utf-8"></script>
+<div class="uSocial-Share" data-pid="367d61a53a7f3134672a7978a2cd9e9c" data-type="share" data-options="round,style1,default,left,slide-down,size32,counter0,mobile_position_right" data-social="vk,telegram,ok,print"></div>
+<!-- /uSocial -->
+                                    <!--
+                                    <a href="https://vk.com/share.php?url=" class="share-facebook"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                                    <a href="#" class="share-twitter"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+                                    <a href="#" class="share-ok"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-envelope"></i></a>
+                                    <a href="#"><i class="fa fa-print" aria-hidden="true"></i></a>
+                                    -->
+                                </div>
+                                </div>
+                            {% endfor %}
+                            <a href="{{ page.get_parent.url }}">Вернуться к новостям</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

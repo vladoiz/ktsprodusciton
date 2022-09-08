@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags %}
+
+{% block body_class %}template-sveden{% endblock %}
+
+
+
+{% block content %}
+<section id="breadcrumbs" class="breadcrumbs">
+  <div class="container">
+
+    <ol>
+      <li><a href="/">Главная</a></li>
+      <li>{{ page.title }}</li>
+    </ol>
+  </div>
+  </section>
+<main id="main">
+      
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+      
+              <header class="section-header">
+                <h3>Студент!</h3>
+                <p>Здесь ты можешь найти всю полезную информацию, необходимую для успешной учебной, профессиональной и внеучебной деятельности.</p>
+              </header>
+      
+              <div class="row g-5">
+      
+                <div class="col-md-6 col-lg-4 wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="box">
+                    <div class="icon" style="background: #ecebff;"><i class="bi bi-calendar4-week" style="color: #8660fe;"></i></div>
+                    <h4 class="title"><a href="">Учебная деятельность</a></h4>
+                    <p class="description"></p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                  <div class="box">
+                    <div class="icon" style="background: #fff0da;"><i class="bi bi-card-checklist" style="color: #e98e06;"></i></div>
+                    <h4 class="title"><a href="">Расписание занятий</a></h4>
+                    <p class="description">Здесь ты найдешь расписание занятий, звонков, экзаменов</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                  <div class="box">
+                    <div class="icon" style="background: #e6fdfc;"><i class="bi bi-dribbble" style="color: #3fcdc7;"></i></div>
+                    <h4 class="title"><a href="">Внеучебная деятельность</a></h4>
+                    <p class="description">О работе кружков, студенческом совете и многом другом</p>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow" data-aos="zoom-in" data-aos-delay="100">
+                  <div class="box">
+                    <div class="icon" style="background: #eafde7;"><i class="bi bi-binoculars" style="color:#41cf2e;"></i></div>
+                    <h4 class="title"><a href="">Чемпионаты</a></h4>
+                    <p class="description">О чемпианатном движении в техникуме</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200"">
+              <div class=" box">
+                  <div class="icon" style="background: #e1eeff;"><i class="bi bi-brightness-high" style="color: #2282ff;"></i></div>
+                  <h4 class="title"><a href="">Доступная образовательная среда</a></h4>
+                  <p class="description"></p>
+                </div>
+              </div>
+      
+              <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                <div class="box">
+                  <div class="icon" style="background: #fceef3;"><i class="bi bi-briefcase" style="color: #ff689b;"></i></div>
+                  <h4 class="title"><a href="">Трудоустройство</a></h4>
+                  <p class="description">Расскажем о трудоустройстве, практиках, стажировках</p>
+                </div>
+              </div>
+      
+            </div>
+      
+            </div>
+          </section>
+
+</main>
+{% endblock content %}
