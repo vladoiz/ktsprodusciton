@@ -43,8 +43,8 @@
 
       <!--<h1 class="logo me-auto"><a href="index.html">КТС</a></h1> -->
       <!-- Uncomment below if you prefer to use an image logo -->
-     <!--<a href="index.html" class="logo me-auto"><img src="{% static 'img/logo2.png' %}" alt="" class="img-fluid" data-aos="fade-up"></a> -->
-
+     <!--<a href="index.html" class="logo me-auto"><img src="{% static 'img/logo2.png' %}" alt="" class="img-fluid" data-aos="fade-up"></a>-->
+      
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto" href="/">Главная</a></li>
@@ -72,7 +72,7 @@
         </ul>
         <i class="bi mobile-nav-toggle bi-list"></i>
       </nav><!-- .navbar -->
-
+      
       <div class="social-links">
         <a href="https://vk.com/ktskursk" class="vk" target="blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
         <a href="https://tglink.ru/WeKTS_bot" class="telegram" target="blank"><i class="fa fa-telegram" aria-hidden="true"></i></a>
@@ -111,11 +111,19 @@
                             <li><a href="/sveden">Сведения об образовательной организации</a></li>
                             <li><a href="/blog">Новости</a></li>
                             <li><a href="#">Абитуриенту</a></li>
-                            <li><a href="#">Студенту</a></li>
-                            <li><a href="#" id="specialButton" ><i class="bi bi-eye-fill"></i> Версия для слабовидящих</a></li>        
+                            <li><a href="#">Студенту</a></li>       
                           </ul>
                         </div>
         
+                        
+        
+                      </div>
+        
+                    </div>
+        
+                  </div>
+        
+                  <div class="col-lg-6">
                         <div class="footer-links">
                           <h4>Контакты</h4>
                           <p>
@@ -131,24 +139,19 @@
                           <a href="https://vk.com/ktskursk" class="vk" target="blank"><i class="bi bi-bootstrap-fill"></i></a>
                           <a href="https://tglink.ru/WeKTS_bot" class="telegram" target="blank"><i class="bi bi-telegram"></i></a>
                           <a href="http://kts-moodle.ru/" class="instagram" target="blank"><i><img src="{% static 'img/moodle.png' %}" style="height: 28px; width: 28px;" ></i></a>
-                        </div>
-        
-                      </div>
-        
-                    </div>
-        
-                  </div>
-        
-                  <div class="col-lg-6">
-        
-                    <div class="form">
+                        </div><!--<
+                     <div class="form">
         
                       <h4>Форма обратной связи</h4>
                       <p>В этой форме вы можете оставить запись в веб-форме о фактах коррупции, экстремизма, терроризма в нашем техникуме, а также задать вопрос администрации вуза.
                         Обратите внимание, что большинство вопросов, связанных с функционированием различных подразделений, можно решить непосредственно c руководством этих подразделений. Поэтому, прежде чем задать вопрос, постарайтесь выяснить интересующую вас информацию с помощью соответствующих разделов нашего сайта.</p>
-        
-                      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                        <div class="form-group">
+                        
+                                              <div class="form-group">
+                                                {% csrf_token %}
+                                                <ul class="form-group mt-3">
+                                                  {{ form.as_ul }}
+                                              </ul>
+                                              </div>
                           <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
                         </div>
                         <div class="form-group mt-3">
@@ -159,18 +162,14 @@
                         </div>
                         <div class="form-group mt-3">
                           <textarea class="form-control" name="message" rows="5" placeholder="Сообщение" required></textarea>
-                        </div>
+                        </div> 
         
-                        <div class="my-3">
-                          <div class="loading">Загрузка</div>
-                          <div class="error-message"></div>
-                          <div class="sent-message">Ваше обращение отправлено. Спасибо :)</div>
-                        </div>
+                        
         
-                        <div class="text-center"><button type="submit" title="Send Message">Отправить</button></div>
-                      </form>
+                        <div class="text-center"><button type="submit" title="Отправить">Отправить</button></div>
+                    
         
-                    </div>
+                    </div>-->
         
                   </div>
         
@@ -196,11 +195,11 @@
         <script src="{%  static 'js/glightbox.min.js' %}"></script>
         <script src="{%  static 'js/isotope.pkgd.min.js' %}"></script>
         <script src="{%  static 'js/swiper-bundle.min.js' %}"></script>
-        <script src="{%  static 'vendor/php-email-form/validate.js' %}"></script>
-        <script src="{%  static 'js/main.js' %}"></script>
+        
         <!-- Connect specialversion-->
         <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
         <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
+        <script src="{%  static 'js/main.js' %}"></script>
         {% block extra_js %}
        
         

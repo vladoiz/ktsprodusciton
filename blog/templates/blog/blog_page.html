@@ -32,7 +32,19 @@
                         <div class="post-meta">
                             <span class="post-date">{{ page.date }}</span>
                             <p>
-                                <a href="#">{{ tag }}</a>
+                                {% with categories=page.categories.all %}
+    {% if categories %}
+        <h5>Категория:</h5>
+        <ul>
+            {% for category in categories %}
+                <li style="display: inline">
+                    {% image category.icon fill-32x32 style="vertical-align: middle" %}
+                    {{ category.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
                             </p>
                         </div>
                         {% if page.bg_image %}

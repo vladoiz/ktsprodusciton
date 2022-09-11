@@ -1,0 +1,25 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="col-md-12 card border-light mb-3 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100" >
+    <div class="post post-row aos-init aos-animate" data-aos="fade-right" data-aos-delay="100" >
+    {% if blog.main_image %}
+        {% image blog.main_image max-350x350 as img %} 
+            <a href="{% pageurl blog %}"><img class="post-img " src="{{ img.url }}" /></a>
+        
+    {% endif %}
+      </a>
+      
+      <div class="post-body">
+        <div class="post-meta">
+          <br>
+          <h3 class="post-title"><a href="{% pageurl blog %}">{{ blog.title }}</a></h3>
+              <span class="post-date">{{ blog.date }}</span>
+              
+        </div>
+        
+        <p>{{ blog.intro }}</p>
+        <a href="{% pageurl blog %}"><button type="button"  class="btn btn-light">Подробнее</button></a>
+        
+      </div>
+    </div>
+    </div>
