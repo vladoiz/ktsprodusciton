@@ -21,15 +21,16 @@
         {# Global stylesheets #}
         <!-- Template Main CSS File 
         <link rel="stylesheet" type="text/css" href="{% static 'css/Proj.css' %}">-->
-        <link href="{% static 'css/mysite.css' %}" rel="stylesheet">
+        
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
-        <link href="{% static 'css/aos.css' %}" rel="stylesheet">
-        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-        <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-        <link href="{% static 'css/glightbox.min.css' %}" rel="stylesheet">
-        <link href="{% static 'css/swiper-bundle.min.css' %}" rel="stylesheet">
+        <link href="{% static '/css/aos/aos.css' %}" rel="stylesheet">
+        <link href="{% static '/css/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static '/css/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static '/css/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static '/css/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
         <link href="{% static 'img/favicon.png' %}" rel="icon">
-        <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static '/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static '/css/mysite.css' %}" rel="stylesheet">
 
         {% block extra_css %}
       
@@ -74,9 +75,9 @@
       </nav><!-- .navbar -->
       
       <div class="social-links">
-        <a href="https://vk.com/ktskursk" class="vk" target="blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
-        <a href="https://tglink.ru/WeKTS_bot" class="telegram" target="blank"><i class="fa fa-telegram" aria-hidden="true"></i></a>
-        <a href="#" id="specialButton" class="instagram"><i class="bi bi-eye-fill"></i></a>
+        <a href="https://vk.com/ktskursk" class="vk" title="Группа в Vk" target="blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+        <a href="https://tglink.ru/WeKTS_bot" class="telegram" title="Бот в телеграмме" target="blank"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+        <a href="#" id="specialButton" title="Версия для слабовидящих" lass="instagram"><i class="bi bi-eye-fill"></i></a>
       </div>
 
     </div>
@@ -110,8 +111,8 @@
                             <li><a href="/">Главная</a></li>
                             <li><a href="/sveden">Сведения об образовательной организации</a></li>
                             <li><a href="/blog">Новости</a></li>
-                            <li><a href="#">Абитуриенту</a></li>
-                            <li><a href="#">Студенту</a></li>       
+                            <li><a href="/abiturientu">Абитуриенту</a></li>
+                            <li><a href="/student">Студенту</a></li>    
                           </ul>
                         </div>
         
@@ -130,43 +131,21 @@
                             г. Курск <br>
                             ул. Софьи Перовской, д.16<br>
                             305001 <br>
-                            <strong>Телефон:</strong> +7 (4712) 54-09-22<br>
-                            <strong>Email:</strong> pu4kurks@mail.ru<br>
+                            <strong>Телефон:</strong><a href="tel:+74712540922"> +7 (4712) 54-09-22</a><br>
+                            <strong>Email:</strong><a href="mailto:pu4kurks@mail.ru"> pu4kurks@mail.ru</a> <br>
                           </p>
                         </div>
         
                         <div class="social-links">
-                          <a href="https://vk.com/ktskursk" class="vk" target="blank"><i class="bi bi-bootstrap-fill"></i></a>
-                          <a href="https://tglink.ru/WeKTS_bot" class="telegram" target="blank"><i class="bi bi-telegram"></i></a>
-                          <a href="http://kts-moodle.ru/" class="instagram" target="blank"><i><img src="{% static 'img/moodle.png' %}" style="height: 28px; width: 28px;" ></i></a>
-                        </div><!--<
-                     <div class="form">
-        
-                      <h4>Форма обратной связи</h4>
-                      <p>В этой форме вы можете оставить запись в веб-форме о фактах коррупции, экстремизма, терроризма в нашем техникуме, а также задать вопрос администрации вуза.
-                        Обратите внимание, что большинство вопросов, связанных с функционированием различных подразделений, можно решить непосредственно c руководством этих подразделений. Поэтому, прежде чем задать вопрос, постарайтесь выяснить интересующую вас информацию с помощью соответствующих разделов нашего сайта.</p>
-                        
-                                              <div class="form-group">
-                                                {% csrf_token %}
-                                                <ul class="form-group mt-3">
-                                                  {{ form.as_ul }}
-                                              </ul>
-                                              </div>
-                          <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
+                          <a href="https://vk.com/ktskursk" class="vk" title="Группа в Vk" target="blank"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                          <a href="https://tglink.ru/WeKTS_bot" class="telegram" title="Бот в telegram" target="blank"><i class="bi bi-telegram"></i></a>
+                          <a href="/contact" class="linkedin"target="blank" title="Задать вопрос"><i class="bi bi-question-circle"></i></a>
+                          <a href="http://kts-moodle.ru/" class="instagram" title="ИИС moodle"target="blank"><i><img src="{% static 'img/moodle.png' %}" style="height: 28px; width: 28px;" ></i></a>
                         </div>
-                        <div class="form-group mt-3">
-                          <input type="email" class="form-control" name="email" id="email" placeholder="Ваш Email" required>
-                        </div>
-                        <div class="form-group mt-3">
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Тема" required>
-                        </div>
-                        <div class="form-group mt-3">
-                          <textarea class="form-control" name="message" rows="5" placeholder="Сообщение" required></textarea>
-                        </div> 
+                        <br>
+                     <!--<div class="form">
         
-                        
-        
-                        <div class="text-center"><button type="submit" title="Отправить">Отправить</button></div>
+                      <a href="/contact"><button class="contact" title="Задать вопрос">Задать вопрос <i class="bi bi-patch-question-fill"></i></button></a></div>
                     
         
                     </div>-->
@@ -189,17 +168,18 @@
         
 
         {# Global javascript #}
-        <script src="{%  static 'js/purecounter.js' %}"></script>
-        <script src="{%  static 'js/aos.js' %}"></script>
-        <script src="{%  static 'js/bootstrap.bundle.min.js' %}"></script>
-        <script src="{%  static 'js/glightbox.min.js' %}"></script>
-        <script src="{%  static 'js/isotope.pkgd.min.js' %}"></script>
-        <script src="{%  static 'js/swiper-bundle.min.js' %}"></script>
+        <script src="{%  static '/js/purecounter/purecounter.js' %}"></script>
+        <script src="{%  static '/js/aos/aos.js' %}"></script>
+        <script src="{%  static '/js/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{%  static '/js/glightbox/js/glightbox.min.js' %}"></script>
+        <script src="{%  static '/js/isotope-layout/isotope.pkgd.min.js' %}"></script>
+        <script src="{%  static '/js/swiper/swiper-bundle.min.js' %}"></script>
+        <script src="{%  static '/js/main.js' %}"></script>
         
         <!-- Connect specialversion-->
         <script src="https://lidrekon.ru/slep/js/jquery.js"></script>
         <script src="https://lidrekon.ru/slep/js/uhpv-full.min.js"></script>
-        <script src="{%  static 'js/main.js' %}"></script>
+        
         {% block extra_js %}
        
         

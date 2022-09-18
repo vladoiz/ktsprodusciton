@@ -1562,7 +1562,7 @@ body {
   #footer .php-email-form textarea {
     padding: 12px 15px;
   }
-  #footer .php-email-form button[type=submit] {
+  #footer .contact {
     background: #1bb1dc;
     border: 0;
     border-radius: 3px;
@@ -1570,10 +1570,12 @@ body {
     color: #fff;
     transition: 0.3s;
   }
-  #footer .php-email-form button[type=submit]:hover {
+  #footer .contact:hover {
     background: #0a98c0;
     cursor: pointer;
   }
+  
+
   @-webkit-keyframes animate-loading {
     0% {
       transform: rotate(0deg);

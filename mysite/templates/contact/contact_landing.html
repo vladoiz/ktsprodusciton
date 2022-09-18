@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+<style>
+button {
+    background: #1bb1dc;
+    border: 0;
+    border-radius: 3px;
+    padding: 8px 30px;
+    color: #fff;
+    transition: 0.3s;
+  }
+button:hover {
+    background: #0a98c0;
+    cursor: pointer;
+  }
+    
+</style>
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+
+</div>
+</section>
+<main id="main">
+    <header class="section-header">
+        <br>
+        <div class="w-50 mx-auto">
+        <h3>Спасибо за ваше обращение! Это автоматический ответ, чтобы вы знали, что мы получили ваше письмо. Мы ответим вам в скором времени.</h3> 
+    </div>
+    </header>
+    <div class="text-center">
+        <a href="/"><button>Вернуться на главную страницу</button></a>
+    </div>
+    <br>
+</main>
+{% endblock %}

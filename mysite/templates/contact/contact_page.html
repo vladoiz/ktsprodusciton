@@ -2,19 +2,71 @@
 {% load wagtailcore_tags %}
 
 {% block content %}
-    <h1>{{ page.title }}</h1>
-    <p>
-        {{ self.intro|richtext }}
-    </p>
-
-    <form action="{% pageurl page %}" method="POST">
-        {% csrf_token %}
-        <ul>
-            {{ form.as_ul }}
-        </ul>
-
-        <button type="submit">
-            Submit Form
-        </button>
-    </form>
+<style>
+    li {
+    list-style-type: none; /* Убираем маркеры */
+   }
+    input{display:block;width:100%;padding:.375rem .75rem;font-size:1rem;font-weight:400;line-height:1.5;color:#212529;background-color:#fff;background-clip:padding-box;border:1px solid #ced4da;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:.25rem;transition:border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.input{transition:none}}.input[type=file]{overflow:hidden}.input[type=file]:not(:disabled):not([readonly]){cursor:pointer}.input:focus{color:#212529;background-color:#fff;border-color:#86b7fe;outline:0;box-shadow:0 0 0 .25rem rgba(13,110,253,.25)}.input::-webkit-date-and-time-value{height:1.5em}.input::-moz-placeholder{color:#6c757d;opacity:1}.input::placeholder{color:#6c757d;opacity:1}.input:disabled,.input[readonly]{background-color:#e9ecef;opacity:1}.input::-webkit-file-upload-button{padding:.375rem .75rem;margin:-.375rem -.75rem;-webkit-margin-end:.75rem;margin-inline-end:.75rem;color:#212529;background-color:#e9ecef;pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:1px;border-radius:0;-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}.input::file-selector-button{padding:.375rem .75rem;margin:-.375rem -.75rem;-webkit-margin-end:.75rem;margin-inline-end:.75rem;color:#212529;background-color:#e9ecef;pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:1px;border-radius:0;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.input::-webkit-file-upload-button{-webkit-transition:none;transition:none}.input::file-selector-button{transition:none}}.input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button{background-color:#dde0e3}.input:hover:not(:disabled):not([readonly])::file-selector-button{background-color:#dde0e3}.input::-webkit-file-upload-button{padding:.375rem .75rem;margin:-.375rem -.75rem;-webkit-margin-end:.75rem;margin-inline-end:.75rem;color:#212529;background-color:#e9ecef;pointer-events:none;border-color:inherit;border-style:solid;border-width:0;border-inline-end-width:1px;border-radius:0;-webkit-transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out}@media (prefers-reduced-motion:reduce){.input::-webkit-file-upload-button{-webkit-transition:none;transition:none}}.input:hover:not(:disabled):not([readonly])::-webkit-file-upload-button{background-color:#dde0e3}.input-plaintext{display:block;width:100%;padding:.375rem 0;margin-bottom:0;line-height:1.5;color:#212529;background-color:transparent;border:solid transparent;border-width:1px 0}.input-plaintext.input-lg,.input-plaintext.input-sm{padding-right:0;padding-left:0}.input-sm{min-height:calc(1.5em + .5rem + 2px);padding:.25rem .5rem;font-size:.875rem;border-radius:.2rem}.input-sm::-webkit-file-upload-button{padding:.25rem .5rem;margin:-.25rem -.5rem;-webkit-margin-end:.5rem;margin-inline-end:.5rem}.input-sm::file-selector-button{padding:.25rem .5rem;margin:-.25rem -.5rem;-webkit-margin-end:.5rem;margin-inline-end:.5rem}.input-sm::-webkit-file-upload-button{padding:.25rem .5rem;margin:-.25rem -.5rem;-webkit-margin-end:.5rem;margin-inline-end:.5rem}.input-lg{min-height:calc(1.5em + 1rem + 2px);padding:.5rem 1rem;font-size:1.25rem;border-radius:.3rem}.input-lg::-webkit-file-upload-button{padding:.5rem 1rem;margin:-.5rem -1rem;-webkit-margin-end:1rem;margin-inline-end:1rem}.input-lg::file-selector-button{padding:.5rem 1rem;margin:-.5rem -1rem;-webkit-margin-end:1rem;margin-inline-end:1rem}.input-lg::-webkit-file-upload-button{padding:.5rem 1rem;margin:-.5rem -1rem;-webkit-margin-end:1rem;margin-inline-end:1rem}textarea.input{min-height:calc(1.5em + .75rem + 2px)}textarea.input-sm{min-height:calc(1.5em + .5rem + 2px)}textarea.input-lg{min-height:calc(1.5em + 1rem + 2px)}.input-color{width:3rem;height:auto;padding:.375rem}.input-color:not(:disabled):not([readonly]){cursor:pointer}.input-color::-moz-color-swatch{height:1.5em;border-radius:.25rem}.form-control-color::-webkit-color-swatch{height:1.5em;border-radius:.25rem}
+    textarea {
+  width:100%;
+  resize: vertical;
+  padding:15px;
+  border-radius:15px;
+  border: 1px solid #ced4da;
+  height:150px;
+}
+button[type=submit] {
+    background: #1bb1dc;
+    border: 0;
+    border-radius: 3px;
+    padding: 8px 30px;
+    color: #fff;
+    transition: 0.3s;
+  }
+button[type=submit]:hover {
+    background: #0a98c0;
+    cursor: pointer;
+  }
+    
+</style>
+<section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+  
+      <ol>
+        <li><a href="/">Главная</a></li>
+        <li>{{ page.title }}</li>
+      </ol>
+    </div>
+    </section>
+  <main id="main">
+    <header class="section-header">
+        <br>
+        <h3>Форма обратной связи</h3>
+                {{ self.intro|richtext }}
+              </header>
+              
+                <div class="w-50 mx-auto">
+                    <div class="form">
+                        <form action="{% pageurl page %}" method="POST">
+                            <div class="form-group">
+                                <ul class="form-group mt-3">
+                                    <div class="form-group mt-3">
+                            {% csrf_token %}
+                                {{ form.as_ul }}
+                            </div>
+                            </ul>
+                            <div class="text-center">
+                            <button type="submit">
+                                Отправить
+                            </button>
+                            </div>
+                        </div>
+                        </form>
+                        </div>
+            
+                    
+                </div>
+              </div>
+        
+        <br>
 {% endblock %}
